@@ -7,7 +7,11 @@
                 <label>
                     <input
                         name="votes"
-                        type="radio" onchange="vote({{ .Value }})"
+                        type="radio"
+                        onchange="vote({{ .Value }})"
+                        {{ if .HasShortcut }}
+                        accesskey="{{ .Shortcut }}"
+                        {{ end }}
                         {{ .IsChecked $.user $.room}} />
                     <span>
                         {{ if .HasIcon }}

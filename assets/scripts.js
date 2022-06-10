@@ -118,5 +118,12 @@ function reload() {
     window.location.reload(true);
 }
 
+(() => {
+    const radios = new Map();
+    document.querySelectorAll('input[name=votes][accesskey]').forEach(e => {
+        const accesskey = e.getAttribute('accesskey');
+        radios.set(accesskey, e);
+    });
 
-
+    document.addEventListener('keyup', e => radios.get(e.key)?.click());
+})();
