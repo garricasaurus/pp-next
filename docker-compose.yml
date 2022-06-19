@@ -6,6 +6,8 @@ services:
       - 38080:38080
     environment:
       MONGODB_URI: mongodb://ppnext:ppnext@mongo:27017/?authSource=ppnext
+    depends_on:
+      - mongo
   mongo:
     image: mongo:latest
     environment:
