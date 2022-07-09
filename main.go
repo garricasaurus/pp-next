@@ -4,14 +4,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 
-	"okki.hu/garric/ppnext/consts"
 	"okki.hu/garric/ppnext/controller"
 )
 
 func main() {
 	r := initRouter()
 	scheduleBackgroundCleanup()
-	log.Fatal(r.Run(consts.Addr))
+	log.Fatal(r.Run())
 }
 
 func initRouter() *gin.Engine {

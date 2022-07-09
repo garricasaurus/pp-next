@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -17,11 +18,18 @@ func DisplayRoom(c *gin.Context) {
 		_ = c.AbortWithError(http.StatusInternalServerError, err)
 		return
 	}
+	var hostPort string
+	if consts.PublicPort == 80 {
+		hostPort = consts.Domain
+	} else {
+		hostPort = fmt.Sprintf("%s:%d", consts.Domain, consts.PublicPort)
+	}
 	h := gin.H{
-		"room":    room,
-		"user":    user,
-		"options": model.VoteOptions,
-		"support": consts.Support,
+		"room":     room,
+		"user":     user,
+		"options":  model.VoteOptions,
+		"support":  consts.Support,
+		"hostPort": hostPort,
 	}
 	c.HTML(http.StatusOK, "room.html.tmpl", h)
 }

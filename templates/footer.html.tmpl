@@ -4,7 +4,7 @@
             <span class="share">
                 <i class="material-icons left icon-default">share</i>
                 <i class="material-icons left icon-swapped">content_copy</i>
-                <span class="tooltipped" onclick="copyToClipboard(this)" data-position="top" data-tooltip="Copy to clipboard">http://localhost:38080/rooms/{{ .room.Name }}</span>
+                <span class="tooltipped" onclick="copyToClipboard(this)" data-position="top" data-tooltip="Copy to clipboard">http://{{ .hostPort }}/rooms/{{ .room.Name }}</span>
             </span>
             <a class="grey-text text-lighten-4 right" 
                href="mailto:{{ .support }}?subject=Planning Poker">

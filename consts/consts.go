@@ -3,7 +3,7 @@ package consts
 import "time"
 
 const Support = "email@example.com"
-const Addr = ":38080"
+const PublicPort = 38080
 const Domain = "localhost"
 
 const CleanupFrequency = 10 * time.Minute // frequency of periodic room cleanup

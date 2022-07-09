@@ -23,4 +23,6 @@ COPY --from=builder /pp-next/ppnext ./ppnext
 COPY /assets ./assets
 COPY /templates ./templates
 
+EXPOSE 8080
+
 CMD [ "./ppnext" ]

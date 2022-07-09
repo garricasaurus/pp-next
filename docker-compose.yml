@@ -3,7 +3,7 @@ services:
   ppnext:
     build: .
     ports:
-      - "38080:38080"
+      - "38080:8080"
     environment:
       MONGODB_URI: mongodb://ppnext:ppnext@mongo:27017/?authSource=ppnext
     depends_on:
